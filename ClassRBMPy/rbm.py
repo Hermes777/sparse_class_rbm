@@ -100,12 +100,12 @@ class RBM:
         numhid = self.in_params['numhid']
 
         model = Model()
-        #model.W = numpy.dot(1, numpy.random.randn(numdims, numhid))
-        model.W = loading_model.matrix_load('test_data/W_init.txt')
+        model.W = numpy.dot(1, numpy.random.randn(numdims, numhid))
+        #model.W = loading_model.matrix_load('test_data/W_init.txt')
         model.c = numpy.zeros((1, numdims))
         model.b = numpy.zeros((1, numhid))
-        #model.Wc = numpy.dot(1, numpy.random.randn(numclasses, numhid))
-        model.Wc = loading_model.matrix_load('test_data/Wc_init.txt')
+        model.Wc = numpy.dot(1, numpy.random.randn(numclasses, numhid))
+        #model.Wc = loading_model.matrix_load('test_data/Wc_init.txt')
         model.cc = numpy.zeros((1, numclasses))
         model.ph = numpy.zeros((numcases, numhid))
         model.nh = numpy.zeros((numcases, numhid))
